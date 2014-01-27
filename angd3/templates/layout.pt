@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      metal:define-macro="layout">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../static/ico/favicon.png">
+
+    <title><tal:cond tal:condition="title | nothing">${title} - </tal:cond>Site Title</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+
+    <!--!<link rel="stylesheet" href="${request.static_url('puedisplay:static/css/bootstrap.css')}">-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet"
+      href="${request.static_url('puedisplay:static/css/font-awesome.min.css')}"/>
+    <link href="${request.static_url('puedisplay:static/d3/nv.d3.css')}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet"
+      href="${request.static_url('puedisplay:static/site.css')}"/>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.6.2/html5shiv.js"></script>
+      <script src="${request.static_url('puedisplay:static/js/respond.min.js')}"></script>
+    <![endif]-->
+  </head>
+
+<!--? todo: make a template-based class thingy -->
+  <body class="template-">
+    <header>
+
+    <!--? Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="fa fa-bolt"></i> Power Home</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/puedetail">PUE Detail</a></li>
+            <!--/<li><a href="/about">About</a></li>-->
+            <li><a href="/contact">Contact</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">HP-Cast <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/hpcast">HP-CAST Power/Temp Charts</a></li>
+                <li><a href="/hpcastpie">HP-CAST Pie charts</a></li>
+                <li><a href="/tbd">...</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">misc data</li>
+                <li><a href="/tbd">...</a></li>
+                <li><a href="/tbd">...</a></li>
+              </ul>
+            </li>
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sensors <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/tbd">Lighting/Plug load details</a></li>
+                <li><a href="/tbd">CDU Details</a></li>
+                <li><a href="/tbd">Hydronics</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">misc data</li>
+                <li><a href="/puesample">PUE Sample</a></li>
+                <li><a href="/pdu">PDU Data</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!--!<li><a href="#">Default</a></li>-->
+            <!--!<li><a href="#">something</a></li>-->
+            <li ><a href="/acceptance">Acceptance</a></li> <!--!class="active" -->
+          </ul>
+        </div><!--? /.nav-collapse -->
+
+      </div><!--? Fixed navbar -->
+    </div>
+    </header>
+
+
+    <div class="site-fluid-container">
+
+
+      <!-- Jumbotron! -->
+      <div class="jumbotron"
+        tal:condition="title-jumbotron | nothing">
+        <h1>${title}</h1>
+        <div tal:condition="description-jumbotron  | nothing">
+          <p>${description-jumbotron}</p>
+        </div>
+      </div>
+
+
+      <div metal:define-slot="content">
+      </div>
+
+
+    </div> <!-- /site-fluid-container -->
+
+
+  <!-- ==== JavaScript ============================================= -->
+  <script src="${request.static_url('puedisplay:static/js/jquery-2.0.3.min.js')}"></script>
+  <!--<script src="${request.static_url('puedisplay:static/js/jquery-2.0.3.min.map')}"></script>-->
+  <!--?<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>-->
+  <script src="${request.static_url('puedisplay:static/js/bootstrap.min.js')}"></script>
+
+  <script src="...static/js/spin.js')}"></script>
+  <!--!<script src="${request.static_url('puedisplay:static/js/jquery.metadata.js')}"></script>-->
+  <!--!<script src="${request.static_url('puedisplay:static/js/jquery.tablesorter.min.js')}"></script>-->
+  <!--!<script src="${request.static_url('puedisplay:static/js/jquery.tablecloth.js')}"></script>-->
+
+  <script src="${request.static_url('puedisplay:static/site.js')}"></script>
+
+
+  </body>
+</html>

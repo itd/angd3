@@ -1,0 +1,9 @@
+<div metal:use-macro="view.layout">
+  <div metal:fill-slot="content">
+
+
+    <p><a href='/'>home page </a></p>
+  
+
+  </div>
+</div>

@@ -1,0 +1,125 @@
+body {
+  min-height: 100px;
+  padding-top: 70px;
+  overflow-y:scroll;
+  font-family: arial;
+}
+
+svg {
+  height:85%;
+}
+
+.twrapper {
+  margin: 2em;
+}
+.table {
+  width: auto;
+}
+
+.content-wrapper {
+  font-size: 150%;
+  padding: 0 2em;
+}
+
+.aggformwrapper {
+  border: 1px black solid;
+}
+
+.notice {
+  background-color: lightgoldenrodyellow;
+  color: darkmagenta;
+}
+
+.td-right {
+  text-align: right;
+}
+
+@media print {
+  body {padding-top: 5px;}
+  header, #pDebug {display: none;}
+  .jumbotron {padding: 0px; font-size: 12px}
+  h1 {font-size: 20px;}
+  h2 {font-size: 18px;}
+}
+
+
+/*bootstrap overrides*/
+.jumbotron {
+    padding-bottom: 36px;
+    padding-top: 30px;
+}
+.jumbotron h1 {
+    font-size: 160%;
+}
+.container .jumbotron {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+
+text {
+  font: 12px sans-serif;
+}
+
+.chart {
+  height: 500px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2em;
+  display: initial;
+}
+
+.chart.full {
+  width: 100%;
+}
+
+.chart.half {
+  width: 50%;
+}
+
+.chart.halfcircles {
+width: 50%;
+height: 64%;
+}
+
+.chart.third {
+  width: 33%;
+}
+
+#cdupowerdatacirlechart svg {
+  height: 60%;
+}
+
+.site-fluid-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 2500px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: calc(1600px - 20px);
+    min-width: calc(1600px - 20px);
+  }
+}
+@media screen and (min-width: 1900px) {
+  .container {
+    max-width: calc(1900px - 20px);
+    min-width: calc(1900px - 20px);
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .container {
+    max-width: calc(2500px - 20px);
+    min-width: calc(2500px - 20px);
+  }
+}
